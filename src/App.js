@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Axios from 'axios';
+import ProfileCard from "./components/profile-card";
+import "./assets/css/normalize.min.css";
+import "./assets/css/style.css";
+import "./assets/css/font-awesome.min.css";
+import DetailCard from "./components/detail-card";
+import Footer from "./components/footer";
 
+const data = Axios.get('http://localhost/wp/deep/wp-json/wp/v2/person/14').then((res)=>{
+                    return res.data;
+                  })
+
+
+
+const profileDetail = 
+  {
+    "email": "wpexpertdeep@gmail.com",
+    "phone": "8077380314",
+    "birthday" : "10th October",
+    "website" : "deepprakashgoyal.online",
+    "address": "Agra, U.P."
+  };
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section id="about" className="about">
+            <div className="container">
+                <div className="about-content">
+                  <ProfileCard />
+                  <DetailCard profileDetails={data}/>
+                </div>
+                <Footer />
+            </div>
+    </section>
   );
 }
 

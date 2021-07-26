@@ -1,0 +1,1099 @@
+/*********************************************************************************************
+Project:      Sira - Online Resume / CV HTML Template
+Version:      1.3
+Last change:  26/10/2019
+
+Style Index
+
+1.  Color Codes
+2.  Defaults & Reset & Global elements
+3.  Main Sections
+4.  Navigation Bar
+5.  Mobile Menu
+6.  About
+7.  Skills
+8.  Education & Experience
+9.  Portfolio
+10. Portfolio Gallery
+11. Blog
+12. Hobbies
+13. Contact
+14. ***** Responsive *****
+    1. Large Screen
+    2. Medium Screen
+    3. Small Screen
+    4. Screen Width 881px
+    5. Extra Small Screen
+    6. Screen Width 600px
+    7. Screen Width 450px
+    8. Screen Width 350px
+*********************************************************************************************/
+
+/*------------------------------------------------------------------------------------------*/
+/* 1. Color Codes */
+/*------------------------------------------------------------------------------------------
+
+***************** Background Color *****************
+
+[ About, Education, Hobbies,
+Skills, Experience, Contact ]   ===> #f6f6f6
+[ Content Boxes ]               ===> #fff
+
+
+******************** Text Color ********************
+
+[ Sections Headings h1 & h2 ]                ===> #2896ca
+[ About Section Job Title & Details Title ]  ===> #2e343f
+[ Download Resume Button Color ]             ===> #f6f6f6
+[ Personal & Professional Skills Headings ]  ===> #2e343f
+[ Titles of Skills ]                         ===> #777
+[ Education & Experience Date Color ]        ===> #f6f6f6
+[ Education & Experience Headings ]          ===> #2896ca
+[ Education & Experience Sub Headings ]      ===> #2e343f
+[ Sections Description Paragraph ]           ===> #777
+[ Send Message Button Color ]                ===> #f6f6f6
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 2. Defaults & Reset & Global elements */
+/*------------------------------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'quicksandbold';
+    src: url('../fonts/quicksand-bold-webfont.woff2') format('woff2'),
+         url('../fonts/quicksand-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*@font-face {
+    font-family: 'quicksandregular';
+    src: url('../fonts/quicksand-regular-webfont.woff2') format('woff2'),
+         url('../fonts/quicksand-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}*/
+
+
+* {
+    box-sizing: border-box
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
+a {
+    text-decoration: none
+}
+
+.clearfix {
+    clear: both
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto
+}
+
+.contact .contact-content form input,
+.contact .contact-content form textarea,
+a,
+i:before,
+li {
+    -webkit-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out
+}
+
+::-webkit-scrollbar {
+    display: none
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'quicksandbold', sans-serif
+}
+
+p {
+    color: #777;
+    font-size: 14px;
+    line-height: 20px
+}
+
+p:first-letter {
+    text-transform: uppercase
+}
+
+/*------------------------------------------------------------------------------------------*/
+/* 3. Main Sections */
+/*------------------------------------------------------------------------------------------*/
+body > section {
+       background: linear-gradient( 
+45deg
+ , #1da1f2, #0e71c8);
+    text-align: center;
+    box-shadow: 0px 10px 110px rgba(0, 0, 0, 0.2)
+}
+
+body > section .container {
+    min-height: 100vh;
+}
+
+.mobile-menu i,
+.navigation-bar li i,
+.about .about-content .profile-info,
+.about .about-content .profile-list,
+.skills .skills-content,
+.education .education-content:after,
+.experience .experience-content:after,
+.education .education-content li .timeline,
+.experience .experience-content li .timeline,
+.blog .post .post-content,
+.hobbies .hobbies-content,
+.contact .contact-content {
+    background-color: #fff;
+    box-shadow: 0px 8px 60px -10px rgb(13 28 39 / 60%);
+    border-radius: 8px;
+}
+
+body > section h1:after,
+body > section h2:after,
+.about .profile-list .social-links li a:hover,
+.contact .social-links li a:hover,
+.about .about-content .download-resume,
+.skills-content .progress-bar .bar-line .bar-fill,
+.education .education-content li:nth-of-type(even):before,
+.education .education-content li:nth-of-type(odd):before,
+.experience .experience-content li:nth-of-type(even):before,
+.experience .experience-content li:nth-of-type(odd):before,
+.education .education-content li .timeline .date,
+.experience .experience-content li .timeline .date,
+.work-filtering .mix .overlay .work-details i,
+.portfolio-content .work-type li.active,
+.portfolio-content .work-type li:hover,
+.hobbies .hobbies-content li:hover i,
+.hobbies .hobbies-content li:hover span,
+.contact .contact-content form input[type=submit] {
+    background-color: #0f74ca
+}
+
+.mobile-menu i:hover,
+.navigation-bar li .active,
+.navigation-bar li i:hover,
+.about .about-content .profile-list td a,
+body > section h1,
+body > section h2,
+.education .education-content li .timeline h4,
+.experience .experience-content li .timeline h4,
+.blog .post .post-text h4 a:hover,
+.blog .post .post-text .read-more,
+.contact .contact-content form input:not([type=submit]):focus,
+.contact .contact-content form textarea:focus {
+    color: #0f74ca
+}
+
+body > section .container {
+    padding: 70px 0
+}
+
+body > section h1,
+body > section h2 {
+    width: 100%;
+    font-size: 34px;
+    text-transform: capitalize;
+    margin-top: 0
+}
+
+body > section h1:after,
+body > section h2:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 60px;
+    margin: 5px auto 0;
+    opacity: .5
+}
+
+/*------------------------------------------------------------------------------------------*/
+/* 4. Navigation Bar */
+/*------------------------------------------------------------------------------------------*/
+.navigation-bar {
+    position: fixed;
+    z-index: 6000;
+    right: 15px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+.navigation-bar li {
+    position: relative
+}
+
+.mobile-menu i,
+.navigation-bar li i {
+    height: 30px;
+    width: 30px;
+    color: #9199af;
+    font-size: 18px;
+    margin-bottom: 13px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.navigation-bar li:not(:last-of-type) i:after {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    content: "";
+    display: block;
+    height: 15px;
+    width: 3px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    cursor: default
+}
+
+.navigation-bar li .title {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    z-index: 7000;
+    -webkit-animation-name: titleFadeInUp;
+    animation-name: titleFadeInUp;
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: none
+}
+
+@-webkit-keyframes titleFadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(-20px, -70%);
+        -ms-transform: translate(-20px, -70%);
+        transform: translate(-20px, -70%)
+    }
+    
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%)
+    }
+}
+
+@keyframes titleFadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(-20px, -70%);
+        -ms-transform: translate(-20px, -70%);
+        transform: translate(-20px, -70%)
+    }
+    
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%)
+    }
+}
+
+.navigation-bar li .title span {
+    position: relative;
+    display: block;
+    background-color: #2e343f;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 10px;
+    line-height: 9px;
+    padding: 6px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #ddd
+}
+
+.navigation-bar li .title span:before {
+    content: "";
+    display: block;
+    border-width: 3px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #2e343f;
+    position: absolute;
+    top: 50%;
+    right: -12px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+.navigation-bar li:hover .title {
+    display: block
+}
+
+/*------------------------------------------------------------------------------------------*/
+/* 5. Mobile Menu */
+/*------------------------------------------------------------------------------------------*/
+.mobile-menu i {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 8000;
+    display: none
+}
+
+/*------------------------------------------------------------------------------------------*/
+/* 6. About */
+/*------------------------------------------------------------------------------------------*/
+.about .container{
+    position: relative;
+}
+.about .container,
+.about .about-content,
+.contact .container,
+.education .container,
+.experience .container,
+.blog .container,
+.blog .blog-content,
+.hobbies .container,
+.skills .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.about .about-content {
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    max-width: 700px
+}
+
+.about .about-content .profile-info,
+.about .about-content .profile-list {
+    width: 46%;
+    max-width: 400px;
+    padding: 20px;
+    margin: 0 auto
+}
+
+.about .about-content .profile-info .user-img {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background-color: #3194c2;
+    margin: 0 auto;
+    border: 5px solid;
+    border-color: #eee #eee #ccc #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    box-shadow: 0 13px 26px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 16%);
+}
+
+.about .about-content .profile-info .user-img:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: -50px;
+    left: -60px;
+    height: 180px;
+    width: 50px;
+    background-color: rgba(200, 200, 200, 0.8);
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+    -webkit-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out
+}
+
+.about .about-content .profile-info .user-img:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 90px;
+    height: 180px;
+    width: 50px;
+    background-color: rgba(200, 200, 200, 0.2);
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+    -webkit-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out
+}
+
+.about .about-content .profile-info .user-img:hover:after {
+    left: 150px;
+    background-color: rgba(200, 200, 200, 0.8)
+}
+
+.about .about-content .profile-info .user-img:hover:before {
+    top: -10px;
+    left: 90px;
+    background-color: rgba(200, 200, 200, 0.2)
+}
+
+.about .about-content .profile-info .user-img img {
+    display: block;
+    width: 140px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.about .about-content .profile-info h1 {
+    font-size: 24px;
+    margin: 10px auto;
+    font-weight: 700;
+}
+
+.about .about-content .profile-info span {
+    display: inline-block;
+    color: #2e343f;
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+.about .about-content .profile-info p {
+    max-width: 400px;
+    margin: 0 auto;
+        color: #000;
+    font-weight: 500;
+    font-size: 13px;
+        /*font-family: 'quicksandregular';*/
+}
+
+.about .about-content .profile-list {
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.about .about-content .profile-list table {
+    margin: auto
+}
+
+.about .about-content .profile-list tbody {
+    display: inline-block;
+    text-align: left
+}
+
+.about .about-content .profile-list td:first-of-type {
+    float: left;
+    width: 60px;
+    color: #2e343f;
+    font-size: 14px;
+    text-transform: capitalize;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.about .about-content .profile-list td:last-of-type {
+   color: #545454;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.about .about-content .profile-list td a {
+    border-bottom: 1px solid transparent
+}
+
+.about .about-content .profile-list td a:hover {
+    border-bottom: 1px solid
+}
+
+.about .profile-list .social-links,
+.contact .social-links {
+    width: 100%;
+    margin: 12px auto 20px;
+    cursor: default
+}
+
+.about .profile-list .social-links .br,
+.contact .social-links .br {
+    display: none
+}
+
+.about .profile-list .social-links li,
+.contact .social-links li {
+    display: inline-block
+}
+
+.about .profile-list .social-links li a,
+.contact .social-links li a {
+    height: 40px;
+    width: 40px;
+    background-color: #ddd;
+    color: #fff;
+    font-size: 18px;
+    margin: 2px 2px 5px;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.about .profile-list .social-links li,
+.about .profile-list .social-links li a i:before,
+.contact .social-links li,
+.contact .social-links li a i:before {
+    -webkit-transition: none;
+    transition: none
+}
+
+.about .profile-list .social-links li a:hover,
+.contact .social-links li a:hover {
+    color: #fff
+}
+
+.about .about-content .download-resume {
+    display: inline-block;
+    color: #f6f6f6;
+    padding: 10px;
+    margin: 0 auto
+}
+
+.about .about-content .download-resume:hover {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15)
+}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 13. Contact */
+/*------------------------------------------------------------------------------------------*/
+.contact .container {
+    padding-bottom: 30px
+}
+
+.contact .contact-content {
+    width: 80%;
+    max-width: 700px;
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.contact .contact-content .contact-map,
+.contact .contact-content form {
+    width: 50%
+}
+
+.contact .contact-content form {
+    padding: 20px
+}
+
+.contact .contact-content form h3 {
+    color: #2e343f;
+    padding: 10px;
+    margin: 0 0 14px
+}
+
+.contact .contact-content form input,
+.contact .contact-content form textarea {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: #2e343f;
+    font-size: 13px;
+    padding: 8px;
+    margin: 0 0 10px;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    outline: 0
+}
+
+.contact .contact-content form input:not([type=submit]):focus,
+.contact .contact-content form textarea:focus {
+    border-color: rgba(40, 150, 202, 0.5)
+}
+
+.contact .contact-content form textarea {
+    height: 120px;
+    resize: none
+}
+
+.contact .contact-content form input[type=submit] {
+    color: #f6f6f6;
+    margin-top: 15px;
+    border: 0;
+    cursor: pointer
+}
+
+.contact .contact-content form input[type=submit]:hover {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15)
+}
+
+.contact .contact-content .contact-map {
+    height: 360px;
+    border: 2px solid #fff
+}
+
+.contact .social-links {
+    width: 100%;
+    margin-top: 20px
+}
+
+/*my custom style*/
+/*___________________________________________________________________________________________*/
+
+.action-buttons{
+        margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+        margin-top: 20px;
+    flex-wrap: wrap;
+}
+.action-buttons a {
+      /*  background: #4f9ec3;*/
+    border-radius: 20px;
+    padding: 2px 12px;
+    margin: 5px;
+    background: linear-gradient( 
+45deg
+ , #1da1f2, #0e71c8);
+    box-shadow: 0 13px 26px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 16%);
+    font-weight: 600;
+}
+.action-buttons a{
+    color: #fff;
+    font-size: 12px;
+    line-height: 2;
+    display: block;
+}
+.action-buttons  a i{
+    margin-right: 3px;
+}
+
+.save-btns{
+        display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.save-btns .btn{
+    text-align: center;
+    padding: 8px 5px;
+    color: #fff;
+    background: #2896ca;
+    width: 100%;
+    font-size: 12px;
+    margin: 0 3px;
+    box-shadow: 0 13px 26px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 16%);
+    background: linear-gradient(to bottom right, #C90A6D, #FF48A0);
+    font-weight: 600;
+    border-radius: 30px;
+}
+.save-btns .btn i{
+    margin-left: 5px;
+}
+.social-links .f-facebook{
+        background: linear-gradient(
+45deg
+, #1769ff, #213fca) !important;
+    box-shadow: 0px 4px 15px rgb(27 86 231 / 70%);
+}
+.social-links .f-twitter{
+background: linear-gradient(
+45deg
+, #1da1f2, #0e71c8) !important;
+    box-shadow: 0px 4px 15px rgb(19 127 212 / 70%);
+}
+.social-links .f-instagram{
+        background: linear-gradient(
+45deg
+, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d) !important;
+    box-shadow: 0px 4px 15px rgb(120 64 190 / 60%);
+}
+.social-links .f-linkedin{
+        background: linear-gradient(
+45deg
+, #3b5998, #0078d7) !important;
+    box-shadow: 0px 4px 15px rgb(43 98 169 / 50%);
+}
+.copyright-section{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+.copyright-section p, .copyright-section p a{
+    color: #fff;
+    text-align: center;
+        /*font-family: 'quicksandregular';*/
+}
+.website-url{
+    word-break:break-all;
+}
+.about .about-content .profile-info .user-img:before, .about .about-content .profile-info .user-img:after{
+    display: none;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+ .image-gallery .single-image img{
+    width:  65px;
+ }  
+
+ .about{
+    background: linear-gradient( 
+        45deg
+         , #1da1f2, #0e71c8);
+            text-align: center;
+            box-shadow: 0px 10px 110px rgb(0 0 0 / 20%);
+ }
+.about .container {
+    min-height: 100vh;
+}
+.about .container {
+    padding: 70px 0;
+}
+/*==========================================================================================*/
+/* 14. Responsive */
+/*==========================================================================================*/
+
+/*------------------------------------------------------------------------------------------*/
+/* 1. Large Screen */
+/*------------------------------------------------------------------------------------------*/
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px
+    }
+    
+    .blog .post:first-of-type .post-content > div,
+    .blog .post:nth-of-type(2) .post-content > div {
+        float: left
+    }
+    
+    .blog .post:nth-of-type(3) .post-content > div,
+    .blog .post:last-of-type .post-content > div {
+        float: right
+    }
+}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 2. Medium Screen */
+/*------------------------------------------------------------------------------------------*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        width: 970px
+    }
+}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 3. Small Screen */
+/*------------------------------------------------------------------------------------------*/
+@media (max-width: 991px) {
+    .container {
+        width: 750px
+    }
+    
+    .portfolio-lightbox .gallery-image img {
+        max-height: 300px
+    }
+    
+    .hobbies .hobbies-content .hobbies-icons .screen991 {
+        display: block
+    }
+}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 4. Screen Width 881px */
+/*------------------------------------------------------------------------------------------*/
+@media (max-width: 881px) {
+    .navigation-bar {
+        right: -60px;
+        top: 0;
+        height: 100%;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        background-color: #fff;
+        padding: 80px 15px 0;
+        border-left: 1px solid #eee;
+        overflow-y: auto;
+        box-shadow: 0 0 10px #ddd
+    }
+    
+    .mobile-menu .fa-bars {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex
+    }
+    
+    .mobile-menu i,
+    .mobile-menu i:before {
+        -webkit-transition: none;
+        transition: none
+    }
+    
+    .navigation-bar li:hover .title {
+        display: none
+    }
+    
+    .portfolio-lightbox > i {
+        display: none
+    }
+    
+    .portfolio-lightbox .gallery-image i {
+        display: flex
+    }
+    
+    .portfolio-lightbox .gallery-image {
+        margin-bottom: 0
+    }
+}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 5. Extra Small Screen */
+/*------------------------------------------------------------------------------------------*/
+@media (max-width: 767px) {
+    .container {
+        width: auto;
+        margin: 0
+    }
+    
+    .about .about-content .profile-info,
+    .about .about-content .profile-list {
+        width: 90%;
+        max-width: none
+    }
+    
+    .about .about-content .profile-info {
+        margin-bottom: 15px
+    }
+    
+    .skills-content .progress-content > div {
+        width: 100%;
+        margin: 0
+    }
+    
+    .skills-content .progress-content .professional-skills {
+        margin-top: 20px
+    }
+    
+    .education .education-content li,
+    .experience .experience-content li {
+        z-index: 2
+    }
+    
+    .education .education-content li:before,
+    .experience .experience-content li:before {
+        top: -10px!important
+    }
+    
+    .education .education-content li .timeline,
+    .experience .experience-content li .timeline {
+        width: 100%;
+        max-width: none;
+        margin: 25px 0
+    }
+    
+    .education .education-content li .timeline:before,
+    .experience .experience-content li .timeline:before {
+        top: -16px !important;
+        right: auto !important;
+        left: 50% !important;
+        margin-left: -10px;
+        border-width: 8px 10px;
+        border-color: transparent transparent #2896ca !important
+    }
+    
+    .portfolio-lightbox .gallery-image {
+        width: 90%;
+        padding: 5px
+    }
+    
+    .portfolio-lightbox .gallery-image img {
+        max-height: 250px
+    }
+    
+    .contact .contact-content form h3 {
+        display: none
+    }
+    
+    .contact .contact-content .contact-map,
+    .contact .contact-content form {
+        width: 100%
+    }
+    
+    .contact .contact-content .contact-map {
+        height: 200px
+    }
+    .image-gallery {
+        margin: 30px 0 20px;
+    }
+}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 6. Screen Width 600px */
+/*------------------------------------------------------------------------------------------*/
+@media (max-width: 600px) {
+    .about .container {
+        padding-top: 50px
+    }
+    
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9000;
+        height: 50px;
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 0 10px #ddd
+    }
+    
+    .mobile-menu i {
+        top: 10px
+    }
+    
+    .portfolio-lightbox .gallery-image img {
+        max-height: 180px
+    }
+    
+    .blog .post:first-of-type .post-content > div,
+    .blog .post:nth-of-type(3) .post-content > div,
+    .blog .post:nth-of-type(2) .post-content > div,
+    .blog .post:last-of-type .post-content > div {
+        float: none
+    }
+    
+    .blog .post {
+        width: 100%
+    }
+    
+    .blog .post .post-content {
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto
+    }
+}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 7. Screen Width 450px */
+/*------------------------------------------------------------------------------------------*/
+@media (max-width: 450px) {
+    .hobbies .hobbies-content .hobbies-icons .screen991 {
+        display: none
+    }
+    
+    .hobbies .hobbies-content .hobbies-icons .screen450 {
+        display: block
+    }
+}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 8. Screen Width 350px */
+/*------------------------------------------------------------------------------------------*/
+@media (max-width: 350px) {
+    .about .profile-list .social-links .screen350,
+    .contact .social-links .screen350 {
+        display: block
+    }
+    
+    .about .about-content .profile-list tr {
+        display: block;
+        margin-bottom: 5px
+    }
+    
+    .about .about-content .profile-list td {
+        display: block;
+        width: 100%!important
+    }
+}
